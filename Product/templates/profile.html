@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<center>
+    <h1>Profile Page</h1>
+    <h3>welcome {{ user }}</h3><br>
+
+
+    {% if user.is_authenticated %}
+    <!--            <h2>{% block title %} Profile {% endblock %}</h2>-->
+    <img class="rounded-circle profile-picture" src="{{  user.personal_info.profile_picture.url }}">
+    <br><br><font style="font-size: 23px; font-family: serif" >Username: {{user}} <br><br>
+    Email: {{user.email}}<br><br>
+    Date-Of-Birth: {{ user.personal_info.date_of_birth }}<br><br>
+    Faculty: {{ user.personal_info.faculty }}<br><br>
+    Grade: {{ user.personal_info.grade }}<br><br>
+    Section: {{ user.personal_info.section }}<br><br>
+    ordered_book: {{ user.personal_info.ordered_book }}<br><br>
+    Click here to change your password: <a class="btn btn-warning" href="{% url 'change-pass' %}">Change
+        Password</a><br><br><br><br></font>
+
+    {% else %}
+    <p>Login to view details</p>
+    {% endif %}
+
+</center>
+
+{% endblock %}

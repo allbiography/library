@@ -1,0 +1,75 @@
+<div class="bar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning bg-gradient">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+                {% if user.is_authenticated %}
+
+
+                <li class="nav-item active">
+                    <a class="nav-link text-black nv" href="{% url 'programming_book' %}">Programming-books</a>
+                </li>
+
+
+                <li class="nav-item active">
+                    <a class="nav-link text-black nv " href="{% url 'text_book' %}">Text-book</a>
+                </li>
+
+                <!--                <li class="nav-item active">-->
+                <!--                    <a class="nav-link  " href="{% url 'text_book' %}">Novels</a>-->
+                <!--                </li>-->
+
+
+                <li class="nav-item active dropdown nv  ">
+                    <a class="nav-link dropdown-toggle text-black  nv" href="#" role="button" data-toggle="dropdown"
+                       aria-haspopup="true">
+                        Others
+                    </a>
+                    <div class="dropdown-menu  bg-warning bg-gradient" aria-labelledby="navbarDropdown">
+
+                        <a class="dropdown-item text-black nv " href="#">Story</a>
+                        <!--                    <div class="dropdown-divider"></div>-->
+                        <a class="dropdown-item text-black nv" href="#">Poems</a>
+                    </div>
+                </li>
+
+
+                <li class="nav-item active">
+                    <a class="nav-link text-black nv " href="{% url 'user-profile' %}">Profile</a>
+                </li>
+<!--                <li class="nav-item active">-->
+<!--                    <a class="nav-link text-black nv " href="{% url 'user-history' %}">History</a>-->
+<!--                </li>-->
+
+                <li class="nav-item active">
+                    <a class="nav-link text-black nv" href="{% url 'logout-user' %}">Logout</a>
+                </li>
+
+                <!--                <li class="nav-item">-->
+                <!--                    <a class="nav-link" href="{% url 'book-order' %}">Order</a>-->
+                <!--                </li>-->
+
+
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link text-black nv" href="{% url 'login-user' %}">Login</a>
+                </li>
+                {% endif %}
+
+            </ul>
+
+            <form class="form-inline my-2 my-lg-0" method=POST action="{% url 'search' %}">
+                {% csrf_token %}
+                <input name="searched" class="form-control mr-sm-2" type="search" placeholder="Search Books"
+                       aria-label="Search">
+                <button class="btn btn-outline-light my-2 my-sm-0 nv" type="submit">Search</button>
+            </form>
+        </div>
+
+    </nav>
+</div>

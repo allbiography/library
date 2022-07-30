@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>
+    {% if searched %}
+    <h1>You Searched For {{ searched }}</h1>
+    <hr>
+
+
+
+
+
+
+    <div class="row">
+        {% for book in programming_books %}
+           {% include 'main_card.html' %}
+        {% endfor %}
+    </div><br><br>
+
+
+
+    <div class="row">
+        {% for book in text_books %}
+            {% include 'main_card.html' %}
+        {% endfor %}
+    </div><br><br>
+
+
+    {% else %}
+          <h1>You forget to searched for book...</h1>
+    {% endif %}
+
+</center>
+{% endblock %}

@@ -1,0 +1,26 @@
+<div class="col">
+            NOVELS
+            <div class="card">
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="{{ book.image_url }}" class="image" style="" alt="Avatar">
+                        </div>
+                        <div class="flip-card-back">
+                            <h4>Description</h4>
+                            <p>{{ book.description }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <h5 class="card-title">{{ book.name }}</h5>
+                    Total stock = {{ book.stock }}
+
+                    <div class="button">
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>

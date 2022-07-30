@@ -1,0 +1,39 @@
+<nav id="navbar " class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- LOGO -->
+
+    <!-- NAVIGATION MENU -->
+    <ul class="nav-links">
+        <!-- USING CHECKBOX HACK -->
+        <input type="checkbox" id="checkbox_toggle"/>
+        <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+        <!-- NAVIGATION MENUS -->
+        {% if user.is_authenticated %}
+        <div class="menu">
+            <li><a href="{% url 'text_book' %}" class="nav_item">Text-Book</a></li>
+            <li><a href="{% url 'programming_book' %}" class="nav_item">Programming-Book</a></li>
+
+
+
+            <li class="services"><a href="{% url 'logout-user' %}" class="nav_item">Logout</a></li>
+
+        </div>
+
+
+        {% else %}
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'login-user' %}">Login</a>
+        </li>
+
+        {% endif %}
+
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0" method=POST action="{% url 'search' %}">
+        {% csrf_token %}
+        <input name="searched" class="form-control mr-sm-2" type="search" placeholder="Search Books"
+               aria-label="Search">
+        <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    </div>
+</nav>
+

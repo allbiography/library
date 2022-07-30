@@ -1,0 +1,36 @@
+<div class="col">
+    <div class="card">
+
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="{{ book.image_url }}" class="image" alt="Avatar">
+                </div>
+                <div class="flip-card-back">
+                    <font color="green"><h4>DESCRIPTION</h4></font>
+                    <p>{{ book.description }}</p>
+                    <font color="red"  style="font-size: 21px; ">Writer</font> = {{ book.writer }}
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card-body">
+
+            <h4 class="card-title">{{ book.name }}</h4>
+            <div class="stock">Total stock = {{ book.stock }}</div>
+            <br>
+
+
+            <center><a href="{% url 'book-order' %}">
+                <button type="button" class="btn btn-primary">Order</button>
+            </a></center>
+            <!--            <div class="button">-->
+            <!--                <a href="#" class="btn btn-secondary"> Order </a>-->
+            <!--            </div>-->
+
+
+        </div>
+    </div>
+</div>

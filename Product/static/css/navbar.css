@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ }
+
+
+.nav-link{
+    hover: Beige;
+    font-size: 22px;
+    color: black;
+}
+
+.bar{
+    padding-top: 4px;
+}
+
+.nv{
+    font-family: monospace;
+    font-weight: bolder;
+    font: 30px;
+}
+
